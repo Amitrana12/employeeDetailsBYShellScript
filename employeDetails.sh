@@ -36,9 +36,9 @@ do
 		empCheck=$((RANDOM%3))
 		empHr="$( getWorkHr $empCheck)"
 		hours=$(($hours+$empHr))
-
 		dailyWage[$days]=$( calDailyWage $empHr )
 done
 empMonthWage=$(($hours*$EMP_RATE_PER_HR))
 echo "Total Wage :"$empMonthWage
 echo "Daily Wage : "${dailyWage[@]}
+echo "Day : "${!dailyWage[@]}
